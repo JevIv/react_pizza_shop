@@ -13,7 +13,10 @@ function Home({ items }) {
           'Spicy Hot',
           'Calzone',
         ]}/>
-        <SortPopUp items={['Popularity', 'Price', 'Name']}/>
+        <SortPopUp items={[
+          { name: 'Popularity', type: 'popular' },
+          { name: 'Price', type: 'price' },
+          { name: 'Name', type: 'name' }]}/>
       </div>
       <h2 className="content__title">All</h2>
       <div className="content__items">
