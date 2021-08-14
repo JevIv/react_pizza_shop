@@ -12,5 +12,7 @@ const setCategory = (catIndex) => ({
 
 });
 
-
-export default setSortBy;
+export {
+  setSortBy,
+  setCategory,
+}
