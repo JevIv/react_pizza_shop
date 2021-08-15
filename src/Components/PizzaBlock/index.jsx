@@ -1,14 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from "classnames";
+import { PreLoaderBlock } from "../index";
 
 
-function PizzaBlock({ name, imageUrl, price, types, sizes }) {
+function Index({ name, imageUrl, price, types, sizes, isLoaded }) {
 
   const availableTypes = ['тонкое', 'традиционное'];
   const availableSizes = [26,30,40];
   const [activeType, setActiveType] = React.useState(types[0]);
   const [activeSize, setActiveSize] = React.useState(sizes[0]);
+
+/*
+  if (isLoaded) {
+    return <PreLoaderBlock/>;
+  }
+*/
 
   const onSelectType = (index) => {
     setActiveType(index);
@@ -16,6 +23,7 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
   const onSelectSize = (index) => {
     setActiveSize(index);
   }
+
 
   return (
     <div className="pizza-block">
@@ -68,7 +76,7 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
   );
 }
 
-PizzaBlock.propTypes = {
+Index.propTypes = {
   name: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
@@ -77,7 +85,7 @@ PizzaBlock.propTypes = {
 
 };
 
-PizzaBlock.defaultProps = {
+Index.defaultProps = {
   name: '---',
   imageUrl: '',
   price: 0,
@@ -87,4 +95,4 @@ PizzaBlock.defaultProps = {
 };
 
 
-export default PizzaBlock;
+export default Index;

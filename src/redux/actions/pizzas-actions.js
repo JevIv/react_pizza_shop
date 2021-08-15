@@ -1,8 +1,13 @@
 import { SET_PIZZAS } from "../reducers/pizzas-reducer";
+import axios from "axios";
 
-const setPizzas = (items) => ({
+export const fetchPizzas = () => (dispatch) => {
+  axios.get('http://localhost:3001/pizzas?_order=desc&_sort=price').then(({ data }) => {
+    dispatch(setPizzas(data));
+  });
+};
+
+export const setPizzas = (items) => ({
   type: SET_PIZZAS,
   payload: items
 });
-
-export default setPizzas;
