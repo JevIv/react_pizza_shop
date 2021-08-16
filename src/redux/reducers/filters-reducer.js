@@ -1,10 +1,12 @@
-
 export const SET_SORT_BY = 'SET_SORT_BY';
 export const SET_CATEGORY = 'SET_CATEGORY';
 
 const initialState = {
-  sortBy: 'popular',
-  category: 0,
+  sortBy: {
+    type: 'popular',
+    order: 'desc'
+  },
+  category: null,
 
 };
 

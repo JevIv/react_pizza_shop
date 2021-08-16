@@ -1,5 +1,6 @@
 
 export const SET_PIZZAS = 'SET_PIZZAS';
+export const SET_LOADED = 'SET_LOADED';
 
 const initialState = {
   items: [],
@@ -8,14 +9,21 @@ const initialState = {
 };
 
 const pizzasReducer = (state = initialState, action) => {
-  if (action.type === SET_PIZZAS){
-    return {
-      ...state,
-      items: action.payload, //change items to new value
-      isLoaded: true
-    };
+  switch (action.type) {
+    case SET_PIZZAS :
+      return {
+        ...state,
+        items: action.payload, //change items to new value
+        isLoaded: true
+      };
+    case SET_LOADED :
+      return {
+        ...state,
+        isLoaded: action.payload, //change isLoaded to new value
+      };
+    default:
+      return state;
   }
-  return state;
 };
 
 export default pizzasReducer;
