@@ -28,8 +28,8 @@ function Home() {
   }, [sortBy, category]);
 
   React.useEffect(() => { //first render
-    dispatch(fetchPizzas(sortBy, category));
-  }, [sortBy, category]);
+    dispatch(fetchPizzas(category, sortBy));
+  }, [category, sortBy]);
 
 
   return (
