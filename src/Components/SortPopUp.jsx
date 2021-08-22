@@ -11,7 +11,8 @@ const SortPopUp = React.memo(function SortPopUp({items, onClickSortType, activeS
   };
 
   const handleOutsideClick = (e) => {
-    if (!e.path.includes(sortRef.current)){ // if not click been outside PopUp > close Popup
+     const path = e.path || (e.composedPath && e.composedPath());
+    if (!path.includes(sortRef.current)){ // if not click been outside PopUp > close Popup
       setVisiblePopup(false);
     }
   };

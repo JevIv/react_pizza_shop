@@ -1,14 +1,11 @@
-/*
+import { ADD_PIZZA_CART } from "../reducers/cart-reducer";
 
-export const setSortBy = (name) => ({
-  type: SET_SORT_BY,
-  payload: name
-
-});
-
-export const setCategory = (catIndex) => ({
-  type: SET_CATEGORY,
-  payload: catIndex
+const addPizzaToCart = (pizza) => ({
+  type: ADD_PIZZA_CART,
+  payload: pizza,
 
 });
-*/
+
+export {
+  addPizzaToCart,
+}
