@@ -9,7 +9,7 @@ export const setLoaded = (payload) => ({
 export const fetchPizzas = (category, sortBy) => (dispatch) => {
   console.log(category, sortBy);
   dispatch(setLoaded(false));
-  axios.get('http://localhost:3001/pizzas', {
+  axios.get('/pizzas', {
     params: {
       category: category,
       _sort: sortBy,
